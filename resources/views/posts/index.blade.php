@@ -16,22 +16,8 @@
                       <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
                     <p class='body'>{{ $post->body }}</p>
-                    <form action="/posts/{{ $post->id}}" id ="form_{{ $post->id }}" method ="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="delete"><span onclick="deletePost(this)"></span>削除</button>
-                    </form>
                 </div>
             @endforeach
         </div>
-        <script>
-            function deletePost(e){
-                'use strict'
-                if(confirm("本当に削除しますか？")){
-                    document.getElemntById(form_{{ $post->id }}).submit();
-                }
-            }
-            
-        </script>
     </body>
 </html>
